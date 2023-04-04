@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Postoffices</title>
+</head>
+<body>
+
+<div th:each="postoffice : ${postoffices}">
+  <div th:text="${postoffice}"></div>
+  <form th:method="DELETE" th:action="@{/postoffices/{id}(id=${postoffice.getId()})}">
+    <input type="submit" value="Delete"/>
+  </form>
+</div>
+
+<br/>
+<hr/>
+
+<a href="/postoffices/new">Create new postoffice</a>
+
+</body>
+</html>
